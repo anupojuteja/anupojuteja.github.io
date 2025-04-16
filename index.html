@@ -1,43 +1,108 @@
-import React from "react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Teja Anupoju - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        background: black;
+        color: white;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-export default function Portfolio() {
-  const skills = ["HTML", "CSS", "JavaScript", "React (Ongoing)"];
+      .skill {
+        background: white;
+        color: black;
+        padding: 10px 20px;
+        margin: 10px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
 
-  return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center space-y-10">
-      <motion.h1
-        className="text-4xl md:text-6xl font-bold"
-        animate={{ rotate: 360 }}
-        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-      >
-        Teja Anupoju
-      </motion.h1>
+      .skill:hover {
+        transform: scale(1.1);
+      }
 
-      <motion.div
-        className="flex flex-wrap justify-center gap-4"
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        transition={{ repeat: Infinity, duration: 3 }}
-      >
-        {skills.map((skill, index) => (
-          <motion.div
-            key={index}
-            className="bg-white text-black px-4 py-2 rounded-2xl shadow-lg text-lg"
-            whileHover={{ scale: 1.1 }}
-          >
-            {skill}
-          </motion.div>
-        ))}
-      </motion.div>
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: fade 3s infinite;
+      }
 
-      <motion.p
-        className="max-w-xl text-center text-lg"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-      >
-        Developed some e-cart applications using these technologies.
-      </motion.p>
-    </div>
-  );
-}
+      .rotating-name {
+        font-size: 3rem;
+        font-weight: bold;
+        animation: spin 10s linear infinite;
+      }
+
+      .description {
+        max-width: 600px;
+        text-align: center;
+        font-size: 1.1rem;
+        animation: fade 6s infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes fade {
+        0%, 100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- React + ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Babel for JSX support -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your React Code -->
+    <script type="text/babel">
+      function Portfolio() {
+        const skills = ["HTML", "CSS", "JavaScript", "React (Ongoing)"];
+
+        return (
+          <div>
+            <div className="rotating-name">Teja Anupoju</div>
+            <div className="skills-container">
+              {skills.map((skill, index) => (
+                <div key={index} className="skill">{skill}</div>
+              ))}
+            </div>
+            <p className="description">
+              Developed some e-cart applications using these technologies.
+            </p>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<Portfolio />);
+    </script>
+  </body>
+</html>

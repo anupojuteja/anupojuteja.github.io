@@ -1,11 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Teja</h1>
-</body>
-</html>
+import React from "react";
+import { motion } from "framer-motion";
+
+export default function Portfolio() {
+  const skills = ["HTML", "CSS", "JavaScript", "React (Ongoing)"];
+
+  return (
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center space-y-10">
+      <motion.h1
+        className="text-4xl md:text-6xl font-bold"
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+      >
+        Teja Anupoju
+      </motion.h1>
+
+      <motion.div
+        className="flex flex-wrap justify-center gap-4"
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ repeat: Infinity, duration: 3 }}
+      >
+        {skills.map((skill, index) => (
+          <motion.div
+            key={index}
+            className="bg-white text-black px-4 py-2 rounded-2xl shadow-lg text-lg"
+            whileHover={{ scale: 1.1 }}
+          >
+            {skill}
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.p
+        className="max-w-xl text-center text-lg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, 1, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      >
+        Developed some e-cart applications using these technologies.
+      </motion.p>
+    </div>
+  );
+}

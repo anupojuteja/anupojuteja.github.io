@@ -1,159 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Teja Anupoju - Full Stack Developer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      font-family: 'Orbitron', sans-serif;
-      padding: 20px;
-      line-height: 1.6;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anupoju Naga Mani Teja - Full Stack Developer</title>
+    <meta name="description" content="Full Stack Developer specializing in Python, Django, React.js. Fresh CS Graduate with 1+ years experience in web development and machine learning.">
+    <meta name="author" content="Anupoju Naga Mani Teja">
+    <meta name="keywords" content="full stack developer, python, django, react, web development, machine learning, portfolio">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Anupoju Naga Mani Teja - Full Stack Developer">
+    <meta property="og:description" content="Full Stack Developer specializing in Python, Django, React.js">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="./assets/images/hero-bg.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Anupoju Naga Mani Teja - Full Stack Developer">
+    <meta name="twitter:description" content="Full Stack Developer specializing in Python, Django, React.js">
+    <meta name="twitter:image" content="./assets/images/hero-bg.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Anupoju Naga Mani Teja",
+        "jobTitle": "Full Stack Developer",
+        "description": "Full Stack Developer specializing in Python, Django, React.js",
+        "url": "https://tejaanupoju.github.io",
+        "sameAs": [
+            "https://linkedin.com/in/tejaanupoju",
+            "https://github.com/tejaanupoju"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Visakhapatnam",
+            "addressCountry": "India"
+        }
     }
-
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .section h2 {
-      color: #00ffff;
-      border-bottom: 1px solid #00ffff;
-      padding-bottom: 5px;
-    }
-
-    .skills-list, .project-list, .education-list, .certifications, .internships, .strengths {
-      margin-left: 20px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #00ffff;
-      color: #000;
-      margin: 5px;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-
-    a {
-      color: #00ffff;
-      text-decoration: none;
-    }
-  </style>
+    </script>
 </head>
 <body>
-  <header>
-    <h1>ANUPOJU NAGA MANI TEJA</h1>
-    <div class="contact">
-      <p>Visakhapatnam | +91 8522845109 | <a href="mailto:anupojunagamaniteja@gmail.com">anupojunagamaniteja@gmail.com</a></p>
-      <p>🔗 <a href="https://linkedin.com/in/teja-anupoju">LinkedIn</a> | <a href="https://github.com/anupojuteja">GitHub</a> | 🌐 <a href="https://anupojuteja.github.io">Portfolio</a></p>
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
     </div>
-  </header>
 
-  <section class="section">
-    <h2>Career Aspiration</h2>
-    <p>Enthusiastic Full Stack Developer trainee with one year of hands-on experience in building web applications using HTML, CSS, JavaScript, React, Python, and Django. Strong understanding of REST APIs, state management, and backend integration. Passionate about problem-solving, team collaboration, and continuously learning to stay current with evolving technologies.</p>
-  </section>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="#home" class="brand-link">TEJA</a>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="./assets/resume.pdf" class="nav-link resume-link" download>Resume</a></li>
+            </ul>
+            
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <span class="theme-icon">🌓</span>
+            </button>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-  <section class="section">
-    <h2>Academic Qualifications</h2>
-    <ul class="education-list">
-      <li><strong>SAI GANAPATHI ENGINEERING COLLEGE</strong> - B.Tech CSE (JNTU-GV) - 7.0 CGPA (2020-2024)</li>
-      <li><strong>VAGDEVI KVR’S JUNIOR COLLEGE</strong> - Intermediate (MPC) - 70.15% (2018-2020)</li>
-      <li><strong>Z.P.HIGH SCHOOL</strong> - SSC - 90.2% (2017-2018)</li>
-    </ul>
-  </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background"></div>
+            <div class="hero-particles" id="particles"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-name animate-fade-in">ANUPOJU NAGA MANI TEJA</h1>
+                    <div class="hero-tagline">
+                        <span id="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                    <p class="hero-subtitle animate-slide-up">Full Stack Developer | Python | React.js | Django</p>
+                    <p class="hero-location animate-slide-up">📍 Visakhapatnam, India</p>
+                    
+                    <div class="hero-cta animate-scale-in">
+                        <a href="./assets/resume.pdf" class="btn btn-primary" download>
+                            <span>📄</span> Download Resume
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <span>🚀</span> View Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="section">
-    <h2>Technical Skills</h2>
-    <div class="skills-list">
-      <span class="tag">HTML5</span>
-      <span class="tag">CSS3</span>
-      <span class="tag">JavaScript (ES6+)</span>
-      <span class="tag">React.js</span>
-      <span class="tag">Bootstrap</span>
-      <span class="tag">Python</span>
-      <span class="tag">Django</span>
-      <span class="tag">SQLite</span>
-      <span class="tag">PostgreSQL</span>
-      <span class="tag">Git</span>
-      <span class="tag">GitHub</span>
-      <span class="tag">VS Code</span>
-      <span class="tag">REST APIs</span>
-      <span class="tag">AJAX</span>
-      <span class="tag">JSON</span>
-    </div>
-  </section>
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title animate-slide-up">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text animate-fade-in">
+                        <p class="about-intro">
+                            Fresh Computer Science graduate with a passion for crafting innovative solutions through full-stack development. 
+                            With over a year of hands-on experience, I specialize in Python, Django, and React.js, bringing ideas to life 
+                            through clean, scalable code.
+                        </p>
+                        <p>
+                            My journey began with a curiosity for how things work behind the scenes, leading me to explore everything 
+                            from machine learning algorithms to modern web architectures. I believe in continuous learning and 
+                            staying updated with the latest technologies to deliver exceptional user experiences.
+                        </p>
+                    </div>
+                    
+                    <div class="stats-grid animate-scale-in">
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="8">0</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="12">0</div>
+                            <div class="stat-label">Technologies Mastered</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="6">0</div>
+                            <div class="stat-label">Certifications Earned</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="section">
-    <h2>Professional Training</h2>
-    <p><strong>Python Full Stack Developer Program:</strong> Full cycle of frontend and backend development, project-based implementation, API integrations, and deployment.</p>
-  </section>
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title animate-slide-up">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category animate-fade-in">
+                        <h3 class="category-title">Frontend</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS3</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">React.js</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-  <section class="section">
-    <h2>Projects</h2>
-    <ul class="project-list">
-      <li><strong>Mart Ecommerce (React)</strong> - <a href="https://github.com/anupojuteja/mart-ecommerce-react">GitHub</a><br />Dynamic React-based e-commerce site with cart, filters, and component-based architecture.</li>
-      <li><strong>Meal Finder App (JavaScript)</strong> - <a href="https://github.com/anupojuteja/MealFinderJS">GitHub</a><br />Search-based app using TheMealDB API, async/await, and DOM rendering.</li>
-      <li><strong>Static Website (HTML & CSS)</strong> - <a href="https://github.com/anupojuteja/CSS-Project">GitHub</a><br />Multipage responsive static site built with HTML5 and CSS.</li>
-    </ul>
-  </section>
+                    <div class="skill-category animate-fade-in">
+                        <h3 class="category-title">Backend</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-level">Advanced</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Django</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js</span>
+                                    <span class="skill-level">Beginner</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="65"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-  <section class="section">
-    <h2>Academic Projects</h2>
-    <ul class="project-list">
-      <li><strong>Brain Tumor Detection using CNN</strong> (Major Project, Oct 2023 - Mar 2024)<br />Automated MRI image classification using deep learning.</li>
-      <li><strong>Network Traffic Analysis</strong> (Mini Project, Jan 2023 - Mar 2023)<br />Traffic monitoring and anomaly detection using data visualization.</li>
-      <li><strong>Grade Processing System</strong> (Mini Project, Aug 2022 - Nov 2022)<br />Java application for automated student grade reports.</li>
-    </ul>
-  </section>
+                    <div class="skill-category animate-fade-in">
+                        <h3 class="category-title">Database & Tools</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MySQL</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git</span>
+                                    <span class="skill-level">Intermediate</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Docker</span>
+                                    <span class="skill-level">Beginner</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-skill="60"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section class="section">
-    <h2>Strengths</h2>
-    <ul class="strengths">
-      <li>Team collaboration</li>
-      <li>Problem-solving mindset</li>
-      <li>Fast learner</li>
-      <li>Time management</li>
-      <li>Clean code practices</li>
-    </ul>
-  </section>
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title animate-slide-up">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card animate-scale-in">
+                        <div class="project-image">
+                            <div class="project-placeholder">🛒</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Mart E-Commerce Platform</h3>
+                            <p class="project-description">
+                                Full-featured e-commerce platform built with Django and React.js, featuring user authentication, 
+                                payment integration, and admin dashboard.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                            <div class="project-duration">Duration: 3 months</div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-outline">GitHub</a>
+                                <a href="#" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
 
-  <section class="section">
-    <h2>Internships</h2>
-    <ul class="internships">
-      <li><strong>Demy Software Solutions</strong> - ML with Python (Intern ID: DSS-520)</li>
-    </ul>
-  </section>
+                    <article class="project-card animate-scale-in">
+                        <div class="project-image">
+                            <div class="project-placeholder">🍽️</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Meal Finder App</h3>
+                            <p class="project-description">
+                                Interactive recipe finder application with search functionality, meal categories, 
+                                and detailed cooking instructions using external API.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">API</span>
+                            </div>
+                            <div class="project-duration">Duration: 2 weeks</div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-outline">GitHub</a>
+                                <a href="#" class="btn btn-primary">Live Demo</a>
+                            </div>
+                        </div>
+                    </article>
 
-  <section class="section">
-    <h2>Certifications</h2>
-    <ul class="certifications">
-      <li>Machine Learning With Python - DSS-520</li>
-      <li>Python Full Stack Intern - BOV24AS707</li>
-      <li>Summer Internship on Full Stack Development</li>
-      <li>Cybersecurity Summer Internship - Participation</li>
-    </ul>
-  </section>
+                    <article class="project-card animate-scale-in">
+                        <div class="project-image">
+                            <div class="project-placeholder">🧠</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Brain Tumor Detection CNN</h3>
+                            <p class="project-description">
+                                Deep learning model using Convolutional Neural Networks for medical image analysis 
+                                and brain tumor detection with high accuracy.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Keras</span>
+                            </div>
+                            <div class="project-duration">Duration: 6 weeks</div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-outline">GitHub</a>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card animate-scale-in">
+                        <div class="project-image">
+                            <div class="project-placeholder">📊</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Network Traffic Analysis</h3>
+                            <p class="project-description">
+                                Cybersecurity project for analyzing network traffic patterns, detecting anomalies, 
+                                and generating security reports using machine learning.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                                <span class="tech-tag">Wireshark</span>
+                            </div>
+                            <div class="project-duration">Duration: 4 weeks</div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-outline">GitHub</a>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <h2 class="section-title animate-slide-up">Experience & Education</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item animate-fade-in">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Machine Learning Intern</h3>
+                                <div class="timeline-company">Demy Software Solutions</div>
+                                <div class="timeline-period">Feb 2024 – Jul 2024</div>
+                            </div>
+                            <div class="timeline-description">
+                                <p>Developed machine learning models for data analysis and prediction. Worked on real-world datasets to implement classification and regression algorithms, improving model accuracy by 15%.</p>
+                                <ul>
+                                    <li>Implemented CNN models for image classification</li>
+                                    <li>Performed data preprocessing and feature engineering</li>
+                                    <li>Created visualizations for model performance analysis</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item animate-fade-in">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">B.Tech Computer Science Engineering</h3>
+                                <div class="timeline-company">Sai Ganapathi Engineering College</div>
+                                <div class="timeline-period">2020 – 2024</div>
+                            </div>
+                            <div class="timeline-description">
+                                <p><strong>CGPA: 7.15</strong></p>
+                                <p>Comprehensive computer science education covering algorithms, data structures, software engineering, database systems, and machine learning. Active participant in coding competitions and technical events.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item animate-fade-in">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="timeline-title">Intermediate MPC</h3>
+                                <div class="timeline-company">Vagdevi KVR's Junior College</div>
+                                <div class="timeline-period">2018 – 2020</div>
+                            </div>
+                            <div class="timeline-description">
+                                <p><strong>Percentage: 70.15%</strong></p>
+                                <p>Specialized in Mathematics, Physics, and Chemistry with a focus on analytical and problem-solving skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certifications animate-scale-in">
+                    <h3 class="certifications-title">Certifications</h3>
+                    <div class="certifications-grid">
+                        <div class="cert-item">Python Programming</div>
+                        <div class="cert-item">Machine Learning</div>
+                        <div class="cert-item">Full Stack Development</div>
+                        <div class="cert-item">Cybersecurity Fundamentals</div>
+                        <div class="cert-item">Django Framework</div>
+                        <div class="cert-item">React.js Development</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <h2 class="section-title animate-slide-up">Latest Blog Posts</h2>
+                <div class="blog-grid">
+                    <article class="blog-card animate-scale-in">
+                        <div class="blog-image">
+                            <div class="blog-placeholder">⚛️</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 15, 2024</span>
+                                <span class="blog-category">Frontend</span>
+                            </div>
+                            <h3 class="blog-title">Getting Started with React.js</h3>
+                            <p class="blog-excerpt">
+                                A comprehensive guide to React.js fundamentals, covering components, state management, 
+                                and best practices for modern web development.
+                            </p>
+                            <a href="#" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card animate-scale-in">
+                        <div class="blog-image">
+                            <div class="blog-placeholder">🐍</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 10, 2024</span>
+                                <span class="blog-category">Backend</span>
+                            </div>
+                            <h3 class="blog-title">Building REST APIs with Django</h3>
+                            <p class="blog-excerpt">
+                                Learn how to create robust and scalable REST APIs using Django REST Framework, 
+                                including authentication and best practices.
+                            </p>
+                            <a href="#" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card animate-scale-in">
+                        <div class="blog-image">
+                            <div class="blog-placeholder">🤖</div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-date">Dec 5, 2024</span>
+                                <span class="blog-category">Machine Learning</span>
+                            </div>
+                            <h3 class="blog-title">ML Fundamentals for Developers</h3>
+                            <p class="blog-excerpt">
+                                Understanding machine learning basics every developer should know, from algorithms 
+                                to practical implementation strategies.
+                            </p>
+                            <a href="#" class="blog-link">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="blog-cta animate-fade-in">
+                    <a href="#" class="btn btn-outline">View All Articles</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title animate-slide-up">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info animate-fade-in">
+                        <h3>Let's Connect</h3>
+                        <p>I'm always interested in hearing about new opportunities and exciting projects. 
+                           Whether you have a question or just want to say hi, feel free to reach out!</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <span>tejaanupoju@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📱</span>
+                                <span>+91 9876543210</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">📍</span>
+                                <span>Visakhapatnam, India</span>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/tejaanupoju" class="social-link" aria-label="LinkedIn">
+                                <span>💼</span>
+                            </a>
+                            <a href="https://github.com/tejaanupoju" class="social-link" aria-label="GitHub">
+                                <span>🐱</span>
+                            </a>
+                            <a href="https://instagram.com/tejaanupoju" class="social-link" aria-label="Instagram">
+                                <span>📸</span>
+                            </a>
+                            <a href="https://twitter.com/tejaanupoju" class="social-link" aria-label="Twitter">
+                                <span>🐦</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form animate-scale-in" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                            <span class="error-message" id="subject-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span id="submit-text">Send Message</span>
+                            <span id="submit-loader" class="hidden">Sending...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <span>↑</span>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Anupoju Naga Mani Teja. All rights reserved.</p>
+                <p>Built with ❤️ using vanilla HTML, CSS & JavaScript</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
